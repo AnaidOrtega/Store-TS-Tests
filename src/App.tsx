@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Form } from "./components";
+import { dummyInitialValues } from "./helpers/dummy/form";
+import "./styles/global.scss";
+import { saveProduct } from "./__tests__/mockServer/api/product";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form
+        initialValues={dummyInitialValues}
+        formTitle="Add Product"
+        onSubmit={(values) => {
+          const response = saveProduct(values);
+          console.log("REPONSE: ", response);
+          return response;
+        }}
+      />
     </div>
   );
 }
