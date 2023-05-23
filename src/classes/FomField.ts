@@ -29,17 +29,13 @@ export class FormField {
     return this.isError;
   }
 
-  handleError() {
+  handleBlur() {
     const { value, required } = this.field;
     if (value === "" && required === true) {
       this.isError = true;
     } else {
       this.isError = false;
     }
-  }
-
-  handleBlur() {
-    this.handleError();
   }
 
   setFieldValue(value: string) {

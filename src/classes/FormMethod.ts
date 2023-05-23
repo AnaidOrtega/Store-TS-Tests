@@ -20,7 +20,7 @@ export class FormMethod {
 
   get isValidForm(): boolean {
     const validFields: boolean[] = this.initialValues.map((field) => {
-      field.handleError();
+      field.handleBlur();
       // update class field
       this.setValue(field);
       if (field.getIsError()) {

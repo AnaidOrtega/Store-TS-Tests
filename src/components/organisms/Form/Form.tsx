@@ -4,8 +4,8 @@ import styles from "./Form.module.scss";
 import { Input, Select } from "../../atoms";
 import { FormField } from "../../../classes/FomField";
 import { dummyOptions } from "../../../helpers/dummy/form";
-import { FormMethod, FormProps } from "../../../classes/FormMethod";
 import { HTTP_STATUS } from "../../../helpers/consts/httpStatus";
+import { FormMethod, FormProps } from "../../../classes/FormMethod";
 
 const Form: FC<FormProps> = ({ initialValues, formTitle, onSubmit }) => {
   const [values, setValues] = useState<FormField[]>(
